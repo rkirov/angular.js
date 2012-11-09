@@ -224,11 +224,28 @@ function callerFile(offset) {
 }
 
 /**
+ * Triggers a browser key event.
+ *
+ * @param {Object} element Either a wrapped jQuery/jqLite node or a DOMElement
+ * @param {string} type event type.
+ */
+function browserTriggerKeyEvent(element, eventType) {
+  if (!element.nodeName) element = element[0];
+  if (document.createEvent) {
+    var event = document.createEvent('KeyboardEvents');
+    event.initKeyboardEvent(eventType, true, true, window, 'a', 'a', 0, '', false, '');
+    element.dispatchEvent(event);
+  } else {
+    element.fireEvent('on' + eventType);
+  }
+}
+
+/**
  * Triggers a browser event. Attempts to choose the right event if one is
  * not specified.
  *
  * @param {Object} element Either a wrapped jQuery/jqLite node or a DOMElement
- * @param {string} type Optional event type.
+ * @param {string=} type Optional event type.
  * @param {Array.<string>=} keys Optional list of pressed keys
  *        (valid values: 'alt', 'meta', 'shift', 'ctrl')
  */
