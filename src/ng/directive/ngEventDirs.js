@@ -37,7 +37,8 @@
  */
 var ngEventDirectives = {};
 forEach(
-  'click dblclick mousedown mouseup mouseover mouseout mousemove mouseenter mouseleave'.split(' '),
+  ('blur click dblclick focus mousedown mouseup mouseover mouseout mousemove ' +
+   'mouseenter mouseleave').split(' '),
   function(name) {
     var directiveName = directiveNormalize('ng-' + name);
     ngEventDirectives[directiveName] = ['$parse', function($parse) {
@@ -55,6 +56,21 @@ forEach(
 
 /**
  * @ngdoc directive
+ * @name ng.directive:blur
+ *
+ * @description
+ * The `blur` directive allows you to specify custom behavior on blur event.
+ *
+ * @element ANY
+ * @param {expression} blur {@link guide/expression Expression} to evaluate upon
+ * blur. (Event object is available as `$event`)
+ *
+ * @example
+ * See {@link ng.directive:ngClick ngClick}
+ */
+
+/**
+ * @ngdoc directive
  * @name ng.directive:ngDblclick
  *
  * @description
@@ -68,6 +84,20 @@ forEach(
  * See {@link ng.directive:ngClick ngClick}
  */
 
+/**
+ * @ngdoc directive
+ * @name ng.directive:focus
+ *
+ * @description
+ * The `focus` directive allows you to specify custom behavior on focus event.
+ *
+ * @element ANY
+ * @param {expression} focus {@link guide/expression Expression} to evaluate upon
+ * focus. (Event object is available as `$event`)
+ *
+ * @example
+ * See {@link ng.directive:ngClick ngClick}
+ */
 
 /**
  * @ngdoc directive
