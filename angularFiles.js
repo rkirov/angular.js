@@ -42,6 +42,7 @@ angularFiles = {
     'src/ng/directive/form.js',
     'src/ng/directive/input.js',
     'src/ng/directive/ngBind.js',
+    'src/ng/directive/ngAction.js',
     'src/ng/directive/ngClass.js',
     'src/ng/directive/ngCloak.js',
     'src/ng/directive/ngController.js',

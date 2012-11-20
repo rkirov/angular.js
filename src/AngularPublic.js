@@ -70,6 +70,7 @@ function publishExternalAPI(angular){
             select: selectDirective,
             style: styleDirective,
             option: optionDirective,
+            ngAction: ngActionDirective,
             ngBind: ngBindDirective,
             ngBindHtmlUnsafe: ngBindHtmlUnsafeDirective,
             ngBindTemplate: ngBindTemplateDirective,
